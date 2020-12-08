@@ -62,5 +62,10 @@ RUN pip3 install requests pytest textract
 RUN cd /tmp && wget https://www.princexml.com/download/prince_13.5-1_ubuntu20.04_amd64.deb
 RUN cd /tmp && gdebi -n prince_13.5-1_ubuntu20.04_amd64.deb
 
+# install fonts
+RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
+RUN apt-get install -y --no-install-recommends fontconfig ttf-mscorefonts-installer
+RUN fc-cache
+
 # start bash
 CMD bash

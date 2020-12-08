@@ -34,6 +34,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # install packages
 RUN apt-get update
 RUN apt-get install -y g++ make cmake
+RUN apt-get install -y wget gdebi
 RUN apt-get install -y curl bats
 RUN apt-get install -y python3 python3-pip
 RUN apt-get install -y ruby ruby-dev
@@ -56,6 +57,10 @@ RUN gem install --no-document \
 
 # install python packages
 RUN pip3 install requests pytest textract
+
+# install prince
+RUN cd /tmp && wget https://www.princexml.com/download/prince_13.5-1_ubuntu20.04_amd64.deb
+RUN cd /tmp && gdebi -n prince_13.5-1_ubuntu20.04_amd64.deb
 
 # start bash
 CMD bash

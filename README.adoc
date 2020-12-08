@@ -1,0 +1,24 @@
+= cicd-pipeline
+Jens Klimke <jens.klimke@rwth-aachen.de>
+
+My personal CI/CD pipeline environment.
+
+== Features
+
+* Asciidoctor (https://asciidoctor.org)
+** asciidoctor
+** asciidoctor-confluence
+** asciidoctor-diagram
+** asciidoctor-epub3
+** asciidoctor-pdf
+** asciidoctor-revealjs
+** kramdown-asciidoc
+** asciidoctor-bibtex
+** asciidoctor-mathematical
+* g++, cmake
+* python3
+** pytest
+* nodejs
+* ruby
+* prince (https://www.princexml.com)
+
